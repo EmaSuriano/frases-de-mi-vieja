@@ -1,15 +1,21 @@
 {
-  "name": "@example/basics",
+  "name": "frases-de-mis-viejos",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^1.1.3"
+    "astro": "^1.1.3",
+    "google-spreadsheet": "^3.3.0"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^1.0.0",
+    "@types/google-spreadsheet": "^3.3.0",
+    "dotenv": "^16.0.2"
   }
 }
