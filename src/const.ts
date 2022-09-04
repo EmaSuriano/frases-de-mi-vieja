@@ -2,7 +2,10 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-export const SPREADSHEET_ID = '17rg8s8LvnMr-Vwjz1T2NdrnXoCiteKucd8lVJlPqK_Y';
+export const SPREADSHEET_URL =
+  'https://docs.google.com/spreadsheets/d/17rg8s8LvnMr-Vwjz1T2NdrnXoCiteKucd8lVJlPqK_Y';
+
+export const SPREADSHEET_ID = SPREADSHEET_URL.split('/').pop();
 
 export const API_KEY = process.env.API_KEY;
 

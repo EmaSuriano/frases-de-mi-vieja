@@ -1,13 +1,16 @@
 ---
 import { FORM_URL, REPORT_URL } from '../const';
 import Layout from '../layouts/Layout.astro';
+import { mapToPhrase } from '../utils/mapToPhrase';
 import { random } from '../utils/random';
 import { getSpreadsheetRows } from '../utils/spreadsheet';
 
-const rows = await getSpreadsheetRows();
-const randomIndex = random(0, rows.length - 1);
+const rows = (await getSpreadsheetRows())
+  .map(mapToPhrase)
+  .filter((phrase) => phrase.checked);
 
-const [, phrase, name] = rows[randomIndex]._rawData;
+const index = random(0, rows.length - 1);
+const { phrase, name } = rows[index];
 ---
 
 <Layout title="Frases de mis viejos">
